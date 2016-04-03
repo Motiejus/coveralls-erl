@@ -254,6 +254,7 @@ escape_str(Str) ->
 
 join(List, Sep) -> join1([E || E <- List, E /= ""], Sep).
 
+join1([], _Sep)   -> [];
 join1([H], _Sep)  -> H;
 join1([H|T], Sep) -> H ++ Sep ++ join1(T, Sep).
 
